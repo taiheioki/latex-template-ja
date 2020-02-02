@@ -1,7 +1,7 @@
 % !TEX encoding = UTF-8 Unicode
 % !TEX root = main.tex
 \RequirePackage[l2tabu, orthodox]{nag}
-\documentclass[a4paper, 11pt]{article}
+\documentclass[11pt, a4paper, dvipdfmx, uplatex]{jsarticle}
 
 % Margin & fonts (delete them to use a provided class style)
 \usepackage[top=1truein, bottom=1truein, left=1truein, right=1truein]{geometry}
@@ -11,7 +11,8 @@
 \usepackage{lmodern}
 
 % hyperref
-\usepackage[bookmarksnumbered=true, pdfdisplaydoctitle=true, pdfusetitle, unicode]{hyperref}
+\usepackage[bookmarksnumbered=true, dvipdfmx, pdfdisplaydoctitle=true, pdfusetitle, unicode]{hyperref}
+\usepackage{pxjahyper}
 \usepackage{url}
 
 % Clever references
@@ -23,21 +24,20 @@
 % Misc
 \usepackage{booktabs}
 \usepackage{comment}
-\usepackage[en-US]{datetime2}
 
 % okicmd
 \usepackage{okicmd}
-\usepackage{okithm}
+\usepackage[language=Japanese]{okithm}
 
 
-\title{Template for LaTeX English Documents}
-\author{Taihei Oki%
+\title{\LaTeX{} 和文文書テンプレート}
+\author{大城 泰平%
   \texorpdfstring{\footnote{
-    Department of Mathematical Informatics, Graduate School of Information Science and Technology, University of Tokyo, Tokyo 113-8656, Japan.
-    E-mail: \href{mailto:taihei_oki@mist.i.u-tokyo.ac.jp}{\nolinkurl{taihei_oki@mist.i.u-tokyo.ac.jp}}
-  }}{}
+    東京大学 大学院情報理工学系研究科 数理情報学専攻．
+    \href{mailto:taihei_oki@mist.i.u-tokyo.ac.jp}{\nolinkurl{taihei_oki@mist.i.u-tokyo.ac.jp}}
+  }}{Introduction}
 }
-\newcommand{\mykeywords}{key, words}
+\newcommand{\mykeywords}{キー，ワード}
 \hypersetup{pdfkeywords={\mykeywords}}
 
 \begin{document}
@@ -46,7 +46,7 @@
 \begin{abstract}
   \input{abstract.tex}
 
-  \bigskip\noindent\textbf{Keywords:} \mykeywords{}
+  \bigskip\noindent\textbf{キーワード：} \mykeywords{}
 \end{abstract}
 
 \input{document.tex}
