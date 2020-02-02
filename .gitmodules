@@ -1,0 +1,3 @@
+[submodule "okicmd"]
+	path = okicmd
+	url = git@github.com:natrium11321/okicmd.git

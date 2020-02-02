@@ -1,0 +1,57 @@
+% !TEX encoding = UTF-8 Unicode
+% !TEX root = main.tex
+\RequirePackage[l2tabu, orthodox]{nag}
+\documentclass[a4paper, 11pt]{article}
+
+% Margin & fonts (delete them to use a provided class style)
+\usepackage[top=1truein, bottom=1truein, left=1truein, right=1truein]{geometry}
+\usepackage{type1cm}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% hyperref
+\usepackage[bookmarksnumbered=true, pdfdisplaydoctitle=true, pdfusetitle, unicode]{hyperref}
+\usepackage{url}
+
+% Clever references
+\usepackage{amsmath}
+\usepackage[capitalize, noabbrev]{cleveref}
+\newcommand{\crefrangeconjunction}{--}
+\usepackage{autonum}
+
+% Misc
+\usepackage{booktabs}
+\usepackage{comment}
+\usepackage[en-US]{datetime2}
+
+% okicmd
+\usepackage{okicmd}
+\usepackage{okithm}
+
+
+\title{Template for LaTeX English Documents}
+\author{Taihei Oki%
+  \texorpdfstring{\footnote{
+    Department of Mathematical Informatics, Graduate School of Information Science and Technology, University of Tokyo, Tokyo 113-8656, Japan.
+    E-mail: \href{mailto:taihei_oki@mist.i.u-tokyo.ac.jp}{\nolinkurl{taihei_oki@mist.i.u-tokyo.ac.jp}}
+  }}{}
+}
+\newcommand{\mykeywords}{key, words}
+\hypersetup{pdfkeywords={\mykeywords}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+  \input{abstract.tex}
+
+  \bigskip\noindent\textbf{Keywords:} \mykeywords{}
+\end{abstract}
+
+\input{document.tex}
+
+\bibliographystyle{abbrv}
+\bibliography{references}
+
+\end{document}
