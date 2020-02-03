@@ -1,5 +1,9 @@
+QuoteStyle = Traditional
+TabSize = 2
+
 CmdLine
 {
   -n8  # Wrong length of dash may have been used.
+  -n19 # Use "'" (ASCII 39) instead of "�" (ASCII 180).
   -n46 # Use \( ... \) instead of $ ... $.
 }
