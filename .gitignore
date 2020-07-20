@@ -280,5 +280,11 @@ TSWLatexianTemp*
 # Uncomment the next line to have this generated file ignored.
 #*Notes.bib
 
+# Temporary file for latexindent
+__latexindent_temp.tex
+
 # zip file generated for arXiv
 arxiv.zip
+
+# vscode local settings
+.vscode
