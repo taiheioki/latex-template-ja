@@ -3,6 +3,7 @@
 % !TEX spellcheck = en-US
 % !TEX TS-program = latexmk
 
+\RequirePackage{plautopatch}
 \RequirePackage[l2tabu,orthodox]{nag}
 \documentclass[11pt,a4paper,dvipdfmx,uplatex]{jsarticle}
 
@@ -16,25 +17,32 @@
 \usepackage[utf8]{inputenc}
 
 % Math
-\usepackage{amsmath}
-\usepackage[transparent]{nicematrix}
+\usepackage[renew-dots,renew-matrix]{nicematrix}
 
 % hyperref
 \usepackage[dvipdfmx,bookmarksnumbered,hypertexnames=false,pdfdisplaydoctitle,pdfusetitle,unicode]{hyperref}
-\usepackage{pxjahyper}
 \usepackage{url}
-
-% Clever references
-\usepackage[capitalize, noabbrev]{cleveref}
-\newcommand{\crefrangeconjunction}{--}
-\usepackage{autonum}
 
 % Tables
 \usepackage{booktabs}
 \usepackage{tablefootnote}
 
-% Misc
+% Language
 \usepackage[japanese]{babel}
+
+% References
+\usepackage{upref}
+\usepackage[capitalize,noabbrev]{cleveref}
+\newcommand{\crefrangeconjunction}{--}
+
+\expandafter\def\csname ver@etex.sty\endcsname{3000/12/31}% chktex 41
+\let\globcount\newcount%
+\usepackage{autonum}
+
+% Bibliography
+\usepackage[numbers]{natbib}
+
+% misc
 \usepackage{comment}
 
 % okicmd
@@ -63,7 +71,8 @@
 
 \input{document.tex}
 
-\bibliographystyle{abbrv}
+\addcontentsline{toc}{section}{参考文献}
+\bibliographystyle{jabbrv}
 \bibliography{references}
 
 \end{document}

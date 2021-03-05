@@ -3,7 +3,7 @@
 
 $log_wrap = 4096;
 ensure_path('max_print_line', $log_wrap);
-ensure_path('TEXINPUTS', './okicmd//');
+ensure_path('TEXINPUTS', './okicmd//', './biblatex-japanese//');
 
 $pdf_mode = 3;
 $latex = 'uplatex -file-line-error -halt-on-error -interaction=nonstopmode -kanji=utf8 -synctex=1 %O %S';
