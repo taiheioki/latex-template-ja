@@ -5,10 +5,12 @@
 
 \RequirePackage{plautopatch}
 \RequirePackage[l2tabu,orthodox]{nag}
-\documentclass[jlreq_notes]{jlreq}
+\documentclass[dvipdfmx,japanese,jlreq_notes]{jlreq}
+\jlreqsetup{itemization_labelsep=0.5zw}
 
 % Language
-\usepackage[japanese]{babel}
+\usepackage{babel}
+\usepackage[autostyle]{csquotes}
 
 % Fonts
 \usepackage{anyfontsize}
@@ -18,8 +20,15 @@
 % Math
 \usepackage[renew-dots,renew-matrix]{nicematrix}
 
+% Bibliography
+\usepackage{etoolbox}
+\cslet{blx@noerroretextools}\empty%
+\usepackage[doi=false,natbib,sorting=nyt]{biblatex-japanese}
+\setlength{\biblabelsep}{1zw}
+\addbibresource{references.bib}
+
 % hyperref
-\usepackage[dvipdfmx,bookmarksnumbered,hypertexnames=false,pdfdisplaydoctitle,pdfusetitle,unicode]{hyperref}
+\usepackage[bookmarksnumbered,hypertexnames=false,pdfdisplaydoctitle,pdfusetitle]{hyperref}
 \usepackage{url}
 
 % Tables
@@ -28,15 +37,10 @@
 
 % References
 \usepackage{upref}
-\usepackage[capitalize,noabbrev]{cleveref}
-\newcommand{\crefrangeconjunction}{--}
-
+\usepackage{cleveref}
 \expandafter\def\csname ver@etex.sty\endcsname{3000/12/31}% chktex 41
 \let\globcount\newcount%
 \usepackage{autonum}
-
-% Bibliography
-\usepackage[numbers]{natbib}
 
 % misc
 \usepackage{comment}
@@ -46,29 +50,28 @@
 \usepackage{okithm}
 
 
-\title{\LaTeX\ 和文書テンプレート}
+\title{\LaTeX{}和文書テンプレート}
 \author{大城 泰平%
   \texorpdfstring{\thanks{
     東京大学 大学院情報理工学系研究科 数理情報学専攻．
-    \href{mailto:taihei_oki@mist.i.u-tokyo.ac.jp}{\nolinkurl{taihei_oki@mist.i.u-tokyo.ac.jp}}
+    \href{mailto:oki@mist.i.u-tokyo.ac.jp}{\nolinkurl{oki@mist.i.u-tokyo.ac.jp}}
   }}{}
 }
 \newcommand{\mykeywords}{キー，ワード}
 \hypersetup{pdfkeywords={\mykeywords}}
 
 \begin{document}
+\selectlanguage{japanese}
 \maketitle
 
 \begin{abstract}
   \input{abstract.tex}
 
-  \bigskip\noindent\textbf{キーワード：} \mykeywords{}
+  \bigskip\noindent\textbf{キーワード：}\mykeywords{}
 \end{abstract}
 
 \input{document.tex}
 
-\addcontentsline{toc}{section}{参考文献}
-\bibliographystyle{jabbrv}
-\bibliography{references}
+\printbibliography[heading=bibintoc]
 
 \end{document}
